@@ -45,4 +45,11 @@ public class Target : MonoBehaviour
     {
         Gizmos.DrawSphere(transform.position, 0.6f);
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Arrow"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
